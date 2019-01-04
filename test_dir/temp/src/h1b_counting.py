@@ -21,14 +21,14 @@ if __name__ == "__main__":
         temp1 = line.split(';')
         if temp1[idx_status].upper() != 'CERTIFIED':
             continue
-        if temp1[idx_state].strip('"').strip().strip('"') in dictState:
-            dictState[temp1[idx_state].strip('"').strip().strip('"')] += 1
+        if temp1[idx_state] in dictState:
+            dictState[temp1[idx_state]] += 1
         else:
-            dictState[temp1[idx_state].strip('"').strip().strip('"')] = 1
-        if temp1[idx_occupation].strip('"').strip().strip('"') in dictOccupation:
-            dictOccupation[temp1[idx_occupation].strip('"').strip().strip('"')] += 1
+            dictState[temp1[idx_state]] = 1
+        if temp1[idx_occupation] in dictOccupation:
+            dictOccupation[temp1[idx_occupation]] += 1
         else:
-            dictOccupation[temp1[idx_occupation].strip('"').strip().strip('"')] = 1
+            dictOccupation[temp1[idx_occupation]] = 1
     f.close()
     #print(dictState)
     #print(dictOccupation)
